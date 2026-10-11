@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a78bfa">
+  <title>How I Feel · Cozy Corner</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌈</text></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html"><span aria-hidden="true">🌈</span> Cozy Corner</a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="playroom.html">Playroom</a></li>
+          <li><a href="feelings.html" aria-current="page">Feelings</a></li>
+          <li><a href="breathing.html">Breathe</a></li>
+          <li><a href="stars.html">My Stars</a></li>
+          <li><a href="grown-ups.html">Grown-ups</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <h1>How do you feel?</h1>
+    <form id="feeling-form" class="card">
+      <fieldset style="border:0;padding:0;margin:0">
+        <legend><h2>Tap the face that fits best</h2></legend>
+        <div class="feelings">
+          <label class="feeling"><input type="radio" name="feeling" value="Happy" data-emoji="😄"><span><b aria-hidden="true">😄</b>Happy</span></label>
+          <label class="feeling"><input type="radio" name="feeling" value="Calm" data-emoji="😌"><span><b aria-hidden="true">😌</b>Calm</span></label>
+          <label class="feeling"><input type="radio" name="feeling" value="Sad" data-emoji="😢"><span><b aria-hidden="true">😢</b>Sad</span></label>
+          <label class="feeling"><input type="radio" name="feeling" value="Angry" data-emoji="😠"><span><b aria-hidden="true">😠</b>Angry</span></label>
+          <label class="feeling"><input type="radio" name="feeling" value="Scared" data-emoji="😨"><span><b aria-hidden="true">😨</b>Scared</span></label>
+          <label class="feeling"><input type="radio" name="feeling" value="Tired" data-emoji="😴"><span><b aria-hidden="true">😴</b>Tired</span></label>
+        </div>
+      </fieldset>
+      <button class="btn" type="submit">Save my feeling</button>
+      <p id="feeling-reply" role="status" style="margin-top:1rem;font-weight:700"></p>
+    </form>
+
+    <section class="card dog" aria-labelledby="dog-title" style="margin-top:1.5rem">
+      <h2 id="dog-title">Show it on the puppy</h2>
+      <p>Drag eyes and a mouth onto the puppy's face. Drag a piece off the puppy to remove it.</p>
+      <div class="dog-layout">
+        <div id="dog-stage" class="dog-stage">
+          <img class="dog-body" src="assets/dog-feelings/body.png" alt="A puppy with no face" draggable="false">
+        </div>
+        <div class="dog-trays">
+          <h3>Eyes</h3>
+          <div id="eyes-tray" class="tray"></div>
+          <label class="size-slider">Eye size <input id="eyes-size" type="range" min="50" max="200" value="100"></label>
+          <h3>Mouths</h3>
+          <div id="mouths-tray" class="tray"></div>
+          <label class="size-slider">Mouth size <input id="mouths-size" type="range" min="50" max="200" value="100"></label>
+          <button id="dog-reset" class="btn secondary" type="button">Start over</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:1.5rem">
+      <h2>My recent feelings</h2>
+      <ul id="history" class="history"><li>Nothing yet</li></ul>
+      <p style="margin-top:1rem"><button id="clear" class="btn secondary" type="button">Clear</button></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">Made with care. Everything stays on this device.</footer>
+  <script src="js/main.js"></script>
+  <script src="js/themes.js"></script>
+  <script src="js/feelings.js"></script>
+  <script src="js/dog.js"></script>
+</body>
+</html>
