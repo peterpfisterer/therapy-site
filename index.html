@@ -4,25 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A friendly space to explore feelings, breathe, and celebrate wins.">
-  <meta name="theme-color" content="#a78bfa">
-  <title>Cozy Corner</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌈</text></svg>">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/theme.js"></script>
+  <meta name="theme-color" content="#d9c7f2">
+  <title>The Playroom</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23f5dfe7%22/><circle cx=%2233%22 cy=%2250%22 r=%2212%22 fill=%22%23cfe7ff%22/><circle cx=%2267%22 cy=%2250%22 r=%2211%22 fill=%22%23d7f2d0%22/><path d=%22M30 70 C 40 82, 60 82, 70 70%22 stroke=%22%234a4f77%22 stroke-width=%228%22 fill=%22none%22 stroke-linecap=%22round%22/></svg>">
+  <link rel="stylesheet" href="css/styles.css?v=20261011-19">
 </head>
-<body>
+<body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap">
-      <a class="logo" href="index.html"><span aria-hidden="true">🌈</span> Cozy Corner</a>
+      <a class="logo" href="index.html">
+        <img src="assets/_%20(2)%20Background%20Removed.png" alt="" aria-hidden="true">
+        The Playroom
+      </a>
       <nav aria-label="Main">
         <ul class="nav">
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="playroom.html">Playroom</a></li>
           <li><a href="feelings.html">Feelings</a></li>
-          <li><a href="breathing.html">Breathe</a></li>
-          <li><a href="stars.html">My Stars</a></li>
-          <li><a href="grown-ups.html">Grown-ups</a></li>
+          <li><a href="breathing.html">Breathing</a></li>
+          <li><a href="stars.html">Action Plans</a></li>
         </ul>
       </nav>
     </div>
@@ -30,37 +31,74 @@
 
   <main id="main" class="wrap">
     <section class="hero">
-      <div class="mascot" aria-hidden="true">🐻</div>
-      <h1>Hi there, friend!</h1>
-      <p>This is your cozy corner. Pick something to do. There are no wrong answers here.</p>
+      <div class="hero-title-card">
+        <div class="mascot" aria-hidden="true">
+          <img src="assets/sun.png" alt="">
+        </div>
+        <h1>Taylor’s Online Therapy Playroom</h1>
+      </div>
+      <div class="hero-actions">
+        <a class="btn" href="feelings.html">Check in</a>
+        <a class="btn secondary" href="breathing.html">Bubble Breathing</a>
+      </div>
     </section>
 
     <section class="grid" aria-label="Activities">
       <a class="tile peach" href="playroom.html">
-        <span class="emoji" aria-hidden="true">🧸</span>
+        <span class="tile-icon" aria-hidden="true">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <g stroke="#4e4468" stroke-width="3" stroke-linejoin="round">
+              <rect x="20" y="42" width="30" height="46" rx="5" fill="#a8c7e8"/>
+              <rect x="50" y="42" width="30" height="46" rx="5" fill="#ffe99a"/>
+              <path d="M32 42 50 8 68 42Z" fill="#f5b8c7"/>
+            </g>
+            <path d="M24 49h22M54 49h22M50 14 39 37" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+          </svg>
+        </span>
         <h2>Playroom</h2>
-        <p>Visit the playroom.</p>
+        <p>Explore gentle activities and imaginative play.</p>
       </a>
       <a class="tile sun" href="feelings.html">
-        <span class="emoji" aria-hidden="true">😊</span>
+        <span class="tile-icon" aria-hidden="true">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="52" r="29" fill="#ffe99a" stroke="#4e4468" stroke-width="4"/>
+            <circle cx="40" cy="48" r="3.5" fill="#4e4468"/>
+            <circle cx="60" cy="48" r="3.5" fill="#4e4468"/>
+            <ellipse cx="34" cy="58" rx="5" ry="3" fill="#f5a3a6" opacity=".8"/>
+            <ellipse cx="66" cy="58" rx="5" ry="3" fill="#f5a3a6" opacity=".8"/>
+            <path d="M42 59c4 8 12 8 16 0" fill="none" stroke="#4e4468" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </span>
         <h2>How I Feel</h2>
-        <p>Show how you feel today.</p>
+        <p>Spot the feeling and give it a name.</p>
       </a>
       <a class="tile sky" href="breathing.html">
-        <span class="emoji" aria-hidden="true">🫧</span>
-        <h2>Calm Bubble</h2>
-        <p>Breathe slow with the bubble.</p>
+        <span class="tile-icon" aria-hidden="true">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <ellipse cx="50" cy="78" rx="32" ry="8" fill="#d9c6f5" opacity=".6"/>
+            <path d="M20 72c2-8 16-13 32-13s27 5 28 13c-1 7-13 10-30 10S22 79 20 72Z" fill="#8e9aab" stroke="#4e4468" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M30 53c1-8 11-13 23-13 13 0 22 5 23 13-1 7-10 11-23 11S31 60 30 53Z" fill="#aeb9c8" stroke="#4e4468" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M40 34c1-7 8-11 16-11s15 4 16 11c-1 7-7 10-16 10s-15-3-16-10Z" fill="#d3dbe4" stroke="#4e4468" stroke-width="3" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h2>Bubble Breathing</h2>
+        <p>Take a slower breath and settle the body.</p>
       </a>
       <a class="tile mint" href="stars.html">
-        <span class="emoji" aria-hidden="true">⭐</span>
-        <h2>My Stars</h2>
-        <p>Collect stars for brave things.</p>
+        <span class="tile-icon" aria-hidden="true">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <path d="M50 18l8 19 21 8-21 8-8 19-8-19-21-8 21-8 8-19z" fill="#fff8d9" stroke="#4e4468" stroke-width="4" stroke-linejoin="round"/>
+            <circle cx="26" cy="31" r="4" fill="#f8d4d8"/>
+            <circle cx="76" cy="70" r="4" fill="#d9eef2"/>
+          </svg>
+        </span>
+        <h2>Action Plans</h2>
+        <p>Choose a small step to work on this week and celebrate each try.</p>
       </a>
     </section>
   </main>
 
   <footer class="site-footer">Made with care. Everything stays on this device.</footer>
   <script src="js/main.js"></script>
-  <script src="js/themes.js"></script>
 </body>
 </html>

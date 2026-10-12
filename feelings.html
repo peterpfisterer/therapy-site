@@ -3,25 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#a78bfa">
-  <title>How I Feel · Cozy Corner</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌈</text></svg>">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/theme.js"></script>
+  <meta name="theme-color" content="#d9c7f2">
+  <title>How I Feel · The Play Room</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23f5dfe7%22/><circle cx=%2233%22 cy=%2250%22 r=%2212%22 fill=%22%23cfe7ff%22/><circle cx=%2267%22 cy=%2250%22 r=%2211%22 fill=%22%23d7f2d0%22/><path d=%22M30 70 C 40 82, 60 82, 70 70%22 stroke=%22%234a4f77%22 stroke-width=%228%22 fill=%22none%22 stroke-linecap=%22round%22/></svg>">
+  <link rel="stylesheet" href="css/styles.css?v=20261011-22">
 </head>
-<body>
+<body class="feelings-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap">
-      <a class="logo" href="index.html"><span aria-hidden="true">🌈</span> Cozy Corner</a>
+      <a class="logo" href="index.html">
+        <img src="assets/_%20(2)%20Background%20Removed.png" alt="" aria-hidden="true">
+        The Playroom
+      </a>
       <nav aria-label="Main">
         <ul class="nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="playroom.html">Playroom</a></li>
           <li><a href="feelings.html" aria-current="page">Feelings</a></li>
-          <li><a href="breathing.html">Breathe</a></li>
-          <li><a href="stars.html">My Stars</a></li>
-          <li><a href="grown-ups.html">Grown-ups</a></li>
+          <li><a href="breathing.html">Breathing</a></li>
+          <li><a href="stars.html">Action Plans</a></li>
         </ul>
       </nav>
     </div>
@@ -29,25 +30,9 @@
 
   <main id="main" class="wrap">
     <h1>How do you feel?</h1>
-    <form id="feeling-form" class="card">
-      <fieldset style="border:0;padding:0;margin:0">
-        <legend><h2>Tap the face that fits best</h2></legend>
-        <div class="feelings">
-          <label class="feeling"><input type="radio" name="feeling" value="Happy" data-emoji="😄"><span><b aria-hidden="true">😄</b>Happy</span></label>
-          <label class="feeling"><input type="radio" name="feeling" value="Calm" data-emoji="😌"><span><b aria-hidden="true">😌</b>Calm</span></label>
-          <label class="feeling"><input type="radio" name="feeling" value="Sad" data-emoji="😢"><span><b aria-hidden="true">😢</b>Sad</span></label>
-          <label class="feeling"><input type="radio" name="feeling" value="Angry" data-emoji="😠"><span><b aria-hidden="true">😠</b>Angry</span></label>
-          <label class="feeling"><input type="radio" name="feeling" value="Scared" data-emoji="😨"><span><b aria-hidden="true">😨</b>Scared</span></label>
-          <label class="feeling"><input type="radio" name="feeling" value="Tired" data-emoji="😴"><span><b aria-hidden="true">😴</b>Tired</span></label>
-        </div>
-      </fieldset>
-      <button class="btn" type="submit">Save my feeling</button>
-      <p id="feeling-reply" role="status" style="margin-top:1rem;font-weight:700"></p>
-    </form>
-
     <section class="card dog" aria-labelledby="dog-title" style="margin-top:1.5rem">
       <h2 id="dog-title">Show it on the puppy</h2>
-      <p>Drag eyes and a mouth onto the puppy's face. Drag a piece off the puppy to remove it.</p>
+      <p>Drag eyes and a mouth onto the puppy to make a face. Drag a piece off the puppy to remove it.</p>
       <div class="dog-layout">
         <div id="dog-stage" class="dog-stage">
           <img class="dog-body" src="assets/dog-feelings/body.png" alt="A puppy with no face" draggable="false">
@@ -64,17 +49,21 @@
       </div>
     </section>
 
-    <section class="card" style="margin-top:1.5rem">
-      <h2>My recent feelings</h2>
-      <ul id="history" class="history"><li>Nothing yet</li></ul>
-      <p style="margin-top:1rem"><button id="clear" class="btn secondary" type="button">Clear</button></p>
+    <section class="card emotion-reference" aria-labelledby="emotion-reference-title">
+      <h2 id="emotion-reference-title">Emotions the puppy can make</h2>
+      <div class="emotion-sheet">
+        <img
+          src="assets/Puppy%20Emotions%20Sticker%20Sheet.png"
+          alt="Puppy emotions: Happy, Sad, Excited, Mad, Scared, Calm, Silly, Surprised, Confident, Embarrassed, Tired, Worried, Proud, Bored, Frustrated, Sick, Content, Anxious, Confused, and Overwhelmed."
+          loading="lazy">
+        <span class="confused-nose" aria-hidden="true"></span>
+      </div>
     </section>
+
   </main>
 
   <footer class="site-footer">Made with care. Everything stays on this device.</footer>
   <script src="js/main.js"></script>
-  <script src="js/themes.js"></script>
-  <script src="js/feelings.js"></script>
-  <script src="js/dog.js"></script>
+  <script src="js/dog.js?v=20261011-2"></script>
 </body>
 </html>
