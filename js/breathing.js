@@ -2,33 +2,74 @@ const orb = document.getElementById('orb');
 const label = document.getElementById('breath-label');
 const btn = document.getElementById('breath-toggle');
 
-// in 4s, hold 1s, out 4s
-const steps = [
-  { cls: 'in', text: 'Breathe in…', ms: 4000 },
-  { cls: 'hold', text: 'Hold', ms: 1000 },
-  { cls: 'out', text: 'Breathe out…', ms: 4000 },
-];
+const phaseDuration = 3000;
+const popDuration = 1100;
+const startingScale = 0.85;
+const largestScale = 2.35;
 let timer = null;
-let i = 0;
+let scale = startingScale;
+let phase = 'in';
 
-function tick() {
-  const s = steps[i % steps.length];
-  orb.className = `orb ${s.cls}`;
-  label.textContent = s.text;
-  i++;
-  timer = setTimeout(tick, s.ms);
+function setScale(nextScale) {
+  scale = Math.max(0.55, Math.min(largestScale, nextScale));
+  orb.style.setProperty('--orb-scale', scale);
+}
+
+function breathe() {
+  if (phase === 'in') {
+    orb.classList.remove('out');
+    orb.classList.add('in');
+    setScale(scale * 0.84);
+    label.textContent = 'Breathe in — the bubble gets smaller';
+    phase = 'out';
+    timer = setTimeout(breathe, phaseDuration);
+    return;
+  }
+
+  orb.classList.remove('in');
+  orb.classList.add('out');
+  const nextScale = scale * 1.55;
+  if (nextScale >= largestScale) {
+    setScale(largestScale);
+    label.textContent = 'Breathe out…';
+    timer = setTimeout(popBubble, phaseDuration);
+    return;
+  }
+
+  setScale(nextScale);
+  label.textContent = 'Breathe out — the bubble gets bigger';
+  phase = 'in';
+  timer = setTimeout(breathe, phaseDuration);
+}
+
+function popBubble() {
+  orb.classList.remove('in', 'out');
+  orb.classList.add('popping');
+  label.textContent = 'Pop! A new bubble is ready.';
+  timer = setTimeout(() => {
+    orb.classList.remove('popping');
+    setScale(startingScale);
+    phase = 'in';
+    timer = setTimeout(breathe, 500);
+  }, popDuration);
+}
+
+function stopBreathing() {
+  clearTimeout(timer);
+  timer = null;
+  orb.classList.remove('in', 'out', 'popping');
+  setScale(1);
+  label.textContent = 'Nice breathing!';
+  btn.textContent = 'Start breathing';
 }
 
 btn.addEventListener('click', () => {
   if (timer) {
-    clearTimeout(timer);
-    timer = null;
-    orb.className = 'orb';
-    label.textContent = 'Great job!';
-    btn.textContent = 'Start';
-  } else {
-    i = 0;
-    btn.textContent = 'Stop';
-    tick();
+    stopBreathing();
+    return;
   }
+  phase = 'in';
+  setScale(startingScale);
+  btn.textContent = 'Stop breathing';
+  breathe();
 });
